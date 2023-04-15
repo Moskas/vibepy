@@ -1,4 +1,67 @@
-#+title: Name TBD
-#+author: Moskas
+#+TITLE: Vibepy
+#+AUTHOR: Moskas
+#+OPTIONS: title:nil
+* Vibepy
 
-Python script to launch random video from any channel.
+Vibepy is a Python script for playing a random video from a YouTube channel or playlist.
+
+** Dependencies
+
+- Python 3.6 or higher
+- scrapetube
+- mpv
+
+** Installation
+
+1. Clone the repository or download the source code
+2. Install the required dependencies
+3. Make the script executable using `chmod +x vibepy.py`
+4. Run the script using `./vibepy.py`
+
+** Usage
+
+#+BEGIN_EXAMPLE
+usage: vibepy.py [-h] [-i CHANNEL_ID] [-p PLAYLIST_ID] [-c] [-u]
+
+A script to play random youtube video from a given channel/playlist
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i CHANNEL_ID, --channel_id CHANNEL_ID
+                        ID of the YouTube channel
+  -p PLAYLIST_ID, --playlist_id PLAYLIST_ID
+                        ID of the YouTube playlist
+  -c, --continuous      If argument is present activates continuous playback mode
+  -u, --update_cache    If argument is present updates the cache of the videos for the given channel/playlist
+#+END_EXAMPLE
+
+*** Examples
+
+- To play a random video from a YouTube channel:
+
+#+BEGIN_EXAMPLE
+./vibepy.py -i <channel_id>
+#+END_EXAMPLE
+
+- To play a random video from a YouTube playlist:
+
+#+BEGIN_EXAMPLE
+./vibepy.py -p <playlist_id>
+#+END_EXAMPLE
+
+- To play a random video from a YouTube channel or playlist in continuous playback mode:
+
+#+BEGIN_EXAMPLE
+./vibepy.py -i <channel_id> -c
+
+./vibepy.py -i <playlist_id> -c
+#+END_EXAMPLE
+
+
+- To update the cache of the videos for a given channel or playlist:
+
+#+BEGIN_EXAMPLE
+./vibepy.py -i <channel_id> -u
+
+./vibepy.py -i <playlist_id> -u
+#+END_EXAMPLE
