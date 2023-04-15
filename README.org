@@ -1,24 +1,22 @@
 #+TITLE: Vibepy
 #+AUTHOR: Moskas
-#+OPTIONS: title:nil
-* Vibepy
 
 Vibepy is a Python script for playing a random video from a YouTube channel or playlist.
 
-** Dependencies
+* Dependencies
 
 - Python 3.6 or higher
 - scrapetube
 - mpv
 
-** Installation
+* Installation
 
 1. Clone the repository or download the source code
 2. Install the required dependencies
 3. Make the script executable using `chmod +x vibepy.py`
 4. Run the script using `./vibepy.py`
 
-** Usage
+* Usage
 
 #+BEGIN_EXAMPLE
 usage: vibepy.py [-h] [-i CHANNEL_ID] [-p PLAYLIST_ID] [-c] [-u]
@@ -35,7 +33,7 @@ optional arguments:
   -u, --update_cache    If argument is present updates the cache of the videos for the given channel/playlist
 #+END_EXAMPLE
 
-*** Examples
+** Examples
 
 - To play a random video from a YouTube channel:
 
