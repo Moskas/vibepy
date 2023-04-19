@@ -31,6 +31,7 @@ optional arguments:
                         ID of the YouTube playlist
   -c, --continuous      If argument is present activates continuous playback mode
   -u, --update_cache    If argument is present updates the cache of the videos for the given channel/playlist
+  -nv, --no-video       Play with only audio, no video
 #+END_EXAMPLE
 
 ** Examples

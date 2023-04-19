@@ -11,8 +11,11 @@ CACHE_DIR = os.path.join(
 )
 
 
-def play_video(video_id):
-    subprocess.run(["mpv", f"https://youtube.com/watch?v={video_id}"])
+def play_video(video_id, no_video):
+    if no_video:
+        subprocess.run(["mpv", f"https://youtube.com/watch?v={video_id}", "--no-video"])
+    else:
+        subprocess.run(["mpv", f"https://youtube.com/watch?v={video_id}"])
 
 
 def get_unique_random_video(video_ids, previous_video_id=None):
@@ -70,6 +73,12 @@ def main():
         action="store_true",
         help="Update the cache file with latest video IDs",
     )
+    parser.add_argument(
+        "-nv",
+        "--no-video",
+        action="store_true",
+        help="Play with only audio, no video",
+    )
     args = parser.parse_args()
 
     if not args.channel_id and not args.playlist_id:
@@ -87,11 +96,11 @@ def main():
         while True:
             print("Playing in a continuous mode")
             video_id = get_unique_random_video(video_ids, previous_video_id)
-            play_video(video_id)
+            play_video(video_id, args.no_video)
             previous_video_id = video_id
     else:
         video_id = get_unique_random_video(video_ids)
-        play_video(video_id)
+        play_video(video_id, args.no_video)
 
 
 if __name__ == "__main__":
